@@ -120,26 +120,13 @@
 }
 
 .avatar-box img{
-  width:100%;
-  height:100%;
+  width:90%;
+  height:auto;
   display:block;
-  object-fit:cover;
-  object-position:center;
+  margin:auto;
+  object-fit:contain;
   border-radius:0;
   transition:transform .4s;
-}
-
-.avatar-box img:hover{
-  transform:scale(1.03);
-}
-
-.avatar-box::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(800px 260px at 50% 0%,rgba(25,195,125,.22),transparent 60%);
-  pointer-events:none;
-  opacity:.8;
 }
     .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center}
     @media (max-width:980px){.about-grid{grid-template-columns:1fr}}
