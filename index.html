@@ -108,31 +108,37 @@
       pointer-events:none;opacity:.8;z-index:0
     }
 
-   /* AVATAR - to'rtburchak rasm */
-.avatar-box{
-  width:80%;
-  height:250px;
-  border-radius:18px;
-  overflow:hidden;
-  border:1px solid rgba(26,42,34,.75);
-  box-shadow:var(--shadow);
-  position:relative;
+/* AVATAR - Rasmdagi kabi maxsus ramka va rasm joylashuvi */
+.avatar-box {
+  width: 100%;
+  max-width: 400px; /* Ramka kengligi */
+  height: 350px;    /* Ramka balandligi */
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 42, 34, 0.8);
+  background: rgba(10, 15, 12, 0.4); /* Ramka ichidagi fon */
+  box-shadow: var(--shadow);
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Rasmni pastga taqaydi, lekin biz object-position bilan tepaga suramiz */
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.avatar-box img{
-  width:60%;
-  height:auto;
-  display:block;
-  margin:auto;
-  object-fit:contain;
-  border-radius:0;
-  transition:transform .4s;
+.avatar-box img {
+  width: 90%;       /* Rasmni ramkadan biroz kichikroq qiladi (padding effekt) */
+  height: 90%;      /* Rasmni ramkadan biroz kichikroq qiladi */
+  display: block;
+  object-fit: cover; /* Rasmni cho'zmasdan to'ldiradi */
+  object-position: top center; /* RASMNI TEPAGA TORTISH - yuz qismini ko'proq ko'rsatadi */
+  border-radius: 18px; /* Ichki rasmning burchaklari */
+  transition: transform 0.4s ease;
+  margin-bottom: 5%; /* Pastdan biroz joy tashlaydi */
 }
-    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center}
-    @media (max-width:980px){.about-grid{grid-template-columns:1fr}}
-    .about h3{font-family:"Playfair Display",serif;font-size:42px;line-height:1.08}
-    .about h3 .accent{color:var(--green)}
-    .about p{color:var(--muted);line-height:1.75;margin:14px 0}
+
+.avatar-box:hover img {
+  transform: scale(1.03); /* Hover bo'lganda biroz kattalashish */
+}
     
     .chips{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
     .chip{
@@ -270,7 +276,7 @@
         </div>
         <div class="hint">
           <div class="down" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 5v14M19 12l-7 7-7-7"></path>
             </svg>
           </div>
